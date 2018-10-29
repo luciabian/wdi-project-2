@@ -1,0 +1,20 @@
+<form action="/instagram" method="post">
+  <div class="control">
+    <label for="name">Username</label>
+    <input name="username" id="name" type="hidden" value="<%= locals.currentUser.username %>"/>
+  </div>
+  <div class="control">
+    <label for="name">Comment:</label>
+    <input name="name" id="name" placeholder="Write a caption">
+  </div>
+  <div class="control">
+    <label for="name">Image (URL)</label>
+    <input name="image" id="name" placeholder="http://...">
+  </div>
+  <div class="control">
+    <label for="location">Location</label>
+    <input name="location" id="location" placeholder="Location">
+  </div>
+
+  <button class="button">Share</button>
+</form>

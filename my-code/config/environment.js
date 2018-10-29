@@ -1,4 +1,4 @@
-const dbUri = 'mongod://localhost/instagram';
+const dbUri = 'mongodb://localhost/instagram';
 const port = 4000;
 
 module.exports = {

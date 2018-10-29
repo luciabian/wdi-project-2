@@ -1,5 +1,6 @@
 const instagramController = require('../controllers/instagramController');
 const authController = require('../controllers/authController');
+const commentsController = require('../controllers/commentsController');
 const secureRoute = require('../lib/secureRoute');
 const router = require('express').Router();
 
@@ -34,16 +35,22 @@ router.get('/instagram/new', secureRoute, instagramController.newRoute);
 router.post('/instagram', secureRoute, instagramController.createRoute);
 
 //SHOW ROUTE
-router.get('instagram/:id', instagramController.showRoute);
+router.get('/instagram/:id', instagramController.showRoute);
 
 //UPDATE ROUTE
-router.put('instagram/:id', secureRoute, instagramController.updateRoute);
+router.put('/instagram/:id', secureRoute, instagramController.updateRoute);
 
 //EDIT ROUTE
 router.get('/instagram/:id/edit', secureRoute, instagramController.editRoute);
 
 //DELETE ROUTE
 router.delete('/instagram/:id', secureRoute, instagramController.deleteRoute);
+
+//COMMENTS CREATE ROUTE
+router.post('/instagram/:instagramId/comments', secureRoute, commentsController.createRoute);
+
+//COMMENTS DELETE ROUTE
+router.delete('/instagram/:instagramId/comments/:commentId', secureRoute, commentsController.deleteRoute);
 
 
 module.exports = router;

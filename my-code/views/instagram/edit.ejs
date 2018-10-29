@@ -1,0 +1,15 @@
+<form action="/instagram/<%= _id %>?_method=PUT" method="post">
+  <div class="control">
+    <label for="name">Comment:</label>
+    <input name="name" value="<%= image %>" id="name" placeholder="Write a caption">
+  </div>
+  <div class="control">
+    <label for="name">Image (URL)</label>
+    <input name="image" value="<%= image %>" id="name" placeholder="http://...">
+  </div>
+  <div class="control">
+    <label for="location">Location</label>
+    <input name="location" value="<%= location %>" id="location" placeholder="Location">
+  </div>
+  <button class="button">Update my post</button>
+</form>

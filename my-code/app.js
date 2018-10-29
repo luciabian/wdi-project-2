@@ -6,8 +6,8 @@ const auth = require('./lib/auth');
 const session = require('express-session');
 
 const mongoose = require('mongoose');
-const env = require('./config/environments');
-const router = require('./config/router');
+const env = require('./config/environment');
+const router = require('./config/routes');
 
 mongoose.connect(env.dbUri);
 

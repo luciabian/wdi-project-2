@@ -1,0 +1,39 @@
+<main>
+  <img class="show-image" src="<%= image %>"/>
+  <% if (locals.isLoggedIn) { %>
+    <div class="buttons">
+    <form action="/instagram/<%= _id %>?_method=DELETE" method="post">
+    <button class="button">Delete</button>
+    </form>
+    <a class="button" href="/instagram/<%= _id %>/edit">Edit</a>
+    </div>
+    <div>
+      <% comments.forEach(comment => { %>
+        <div>
+          <span style="font-weight: bold;"><%= comment.username %></span>
+        </div>
+        <div>
+          <span><%= comment.content %></span>
+          <span>
+            <form method="POST" action="/instagram/<%= _id %>/comments/<%= comment._id %>?_method=DELETE">
+              <button>x</button>
+            </form>
+          </span>
+        </div>
+      <% }) %>
+    </div>
+    <div>
+      <form method="POST" action="/instagram/<%= _id %>/comments">
+        <textarea name="content"></textarea>
+        <input name="username" type="hidden" value="<%= locals.currentUser.username %>"/>
+        <button>Post comment</button>
+      </form>
+    </div>
+  <% } %>
+  <ul>
+  <% comments.forEach(comment => { %>
+    <li><strong><%= comment.user %></strong></li>
+    <li><%= comment.content %></li>
+  <% }) %>
+  </ul>
+    </main>

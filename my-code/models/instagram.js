@@ -1,15 +1,14 @@
 const mongoose = require('mongoose');
 
 const instagramSchema = mongoose.Schema({
-  id: String,
   image: String,
-  username: String,
-  date: Number,
+  comment: String,
+  time: { type: Date, default: Date.now },
   location: String,
   comments: [
     {
       content: String,
-      username: String
+      user: String
     }
   ]
 });
