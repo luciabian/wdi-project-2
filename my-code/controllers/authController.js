@@ -8,9 +8,7 @@ function registerFormRoute(req, res) {
 //CREATE REGISTRATION
 function registerRoute(req, res) {
   User.create(req.body)
-    .then(result => {
-      res.redirect('/login');
-    });
+    .then(res.redirect('/login'));
 }
 
 //NEW LOGIN
@@ -26,7 +24,7 @@ function loginRoute(req, res) {
         res.redirect('/login');
       } else {
         req.session.userId = result._id;
-        res.redirect('/');
+        res.redirect('/instagram');
       }
     });
 }
@@ -34,7 +32,7 @@ function loginRoute(req, res) {
 //LOGOUT
 function logoutRoute(req, res) {
   req.session.regenerate(function() {
-    res.redirect('/');
+    res.redirect('/instagram');
   });
 }
 

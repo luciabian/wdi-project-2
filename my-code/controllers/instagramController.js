@@ -23,9 +23,8 @@ function createRoute(req, res) {
 
 //SHOW FUNCTION
 function showRoute(req, res) {
-  console.log('req.params is', req.params);
   Instagram.findById(req.params.id)
-    .populate ('comments.user')
+    .populate('comments.user')
     .then(result => {
       res.render('instagram/show', result);
     });

@@ -1,8 +1,13 @@
 const instagramController = require('../controllers/instagramController');
 const authController = require('../controllers/authController');
 const commentsController = require('../controllers/commentsController');
+const userController = require('../controllers/userController');
 const secureRoute = require('../lib/secureRoute');
 const router = require('express').Router();
+
+//PROFILE SHOW ROUTE
+
+router.get('/profile/:id', secureRoute, userController.show);
 
 //REGISTER ROUTES
 router.get('/register', authController.registerFormRoute);

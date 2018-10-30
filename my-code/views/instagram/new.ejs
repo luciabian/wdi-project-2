@@ -1,11 +1,11 @@
 <form action="/instagram" method="post">
   <div class="control">
     <label for="name">Username</label>
-    <input name="username" id="name" type="hidden" value="<%= locals.currentUser.username %>"/>
+    <input name="addedBy" id="name" type="hidden" value="<%= locals.currentUser._id %>"/>
   </div>
   <div class="control">
-    <label for="name">Comment:</label>
-    <input name="name" id="name" placeholder="Write a caption">
+    <label for="name">Caption</label>
+    <input name="caption" id="name" placeholder="Write a caption">
   </div>
   <div class="control">
     <label for="name">Image (URL)</label>

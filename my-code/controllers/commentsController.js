@@ -9,7 +9,6 @@ function createRoute(req,res) {
 }
 
 function deleteRoute(req, res) {
-  console.log('Delete comments', req.params.commentId);
   Instagram.findById(req.params.instagramId)
     .then(instagram => {
       instagram.comments.id(req.params.commentId).remove();

@@ -1,16 +1,33 @@
-<main>
-  <img class="show-image" src="<%= image %>"/>
-  <% if (locals.isLoggedIn) { %>
-    <div class="buttons">
-    <form action="/instagram/<%= _id %>?_method=DELETE" method="post">
-    <button class="button">Delete</button>
-    </form>
-    <a class="button" href="/instagram/<%= _id %>/edit">Edit</a>
-    </div>
-    <div>
+<div class="columns">
+  <h1><%= addedBy %></h1>
+  <div class="picture column is-6">
+    <% if (location) { %>
+    <h4 class="subtitle">Location: <%= location %></h4>
+    <% } %>
+    <img src="<%= image %>" >
+    <h4 class="subtitle">Posted on <%= time %></h4>
+    <% if (locals.isLoggedIn) {%>
+      <div class="columns">
+        <div class= "column is-half">
+          <a class="button" href="/instagram/<%= id %>/edit">Edit</a>
+        </div>
+        <div class="column is-half">
+          <form action="/instagram/<%= id %>?_method=DELETE" method="post">
+            <button class="button">Delete</button>
+          </form>
+        </div>
+      </div>
+      <% } %>
+  </div>
+  <div class="comments colum is-6">
+    <% if (caption) { %>
+    <h4 class="subtitle"><%= caption %></h4>
+    <% } %>
+    <ul>
+    <% if (locals.isLoggedIn) { %>
       <% comments.forEach(comment => { %>
         <div>
-          <span style="font-weight: bold;"><%= comment.username %></span>
+          <span style="font-weight: bold;"><%= comment.user %></span>
         </div>
         <div>
           <span><%= comment.content %></span>
@@ -21,19 +38,14 @@
           </span>
         </div>
       <% }) %>
-    </div>
-    <div>
-      <form method="POST" action="/instagram/<%= _id %>/comments">
-        <textarea name="content"></textarea>
-        <input name="username" type="hidden" value="<%= locals.currentUser.username %>"/>
-        <button>Post comment</button>
-      </form>
-    </div>
-  <% } %>
-  <ul>
-  <% comments.forEach(comment => { %>
-    <li><strong><%= comment.user %></strong></li>
-    <li><%= comment.content %></li>
-  <% }) %>
-  </ul>
-    </main>
+    </ul>
+        <div>
+          <form method="POST" action="/instagram/<%= _id %>/comments">
+            <textarea name="content"></textarea>
+            <input name="username" type="hidden" value="<%= locals.currentUser.username %>"/>
+            <button>Post comment</button>
+          </form>
+        </div>
+    <% } %>
+ </div>
+</div>

@@ -4,8 +4,8 @@
     <% instagram.forEach(instagram => { %>
       <div>
       <a href="/instagram/<%= instagram.id %>">
-      <img width="200px" height="200px" src="<%= instagram.image %>" />
-      <h3><%= instagram.name %></h3>
+      <img src="<%= instagram.image %>" />
+      <h3><%= instagram.comment %></h3>
       </a>
       </div>
       <% }) %>

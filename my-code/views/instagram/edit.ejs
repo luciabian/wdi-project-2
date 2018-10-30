@@ -1,7 +1,7 @@
 <form action="/instagram/<%= _id %>?_method=PUT" method="post">
   <div class="control">
-    <label for="name">Comment:</label>
-    <input name="name" value="<%= image %>" id="name" placeholder="Write a caption">
+    <label for="name">Caption</label>
+    <input name="caption" value="<%= caption %>" id="name" placeholder="Edit your caption">
   </div>
   <div class="control">
     <label for="name">Image (URL)</label>
@@ -9,7 +9,7 @@
   </div>
   <div class="control">
     <label for="location">Location</label>
-    <input name="location" value="<%= location %>" id="location" placeholder="Location">
+    <input name="location" value="<%= location %>" id="location" placeholder="Edit the location">
   </div>
   <button class="button">Update my post</button>
 </form>
