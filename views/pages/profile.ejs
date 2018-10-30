@@ -1,0 +1,6 @@
+<h1><%=  %></h1>
+<h2> My posts </h2>
+<% addedPosts.forEach(instagram => { %>
+  <p><strong><%= instagram.caption %></strong></p>
+  <img><%= instagram.image %></img>
+  <% }); %>
