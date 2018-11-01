@@ -6,7 +6,6 @@ const secureRoute = require('../lib/secureRoute');
 const router = require('express').Router();
 
 //PROFILE SHOW ROUTE
-
 router.get('/profile/:id', secureRoute, userController.show);
 
 //REGISTER ROUTES
@@ -21,7 +20,7 @@ router.post('/login', authController.loginRoute);
 router.get('/logout', authController.logoutRoute);
 
 //HOME ROUTES
-router.get('/', function(req, res){
+router.get('/instagram', function(req, res){
   res.render('pages/home');
 });
 
@@ -31,7 +30,7 @@ router.get('/explore', function(req, res) {
 });
 
 //INDEX ROUTE
-router.get('/instagram', instagramController.indexRoute);
+router.get('/', instagramController.indexRoute);
 
 //NEW ROUTE
 router.get('/instagram/new', secureRoute, instagramController.newRoute);

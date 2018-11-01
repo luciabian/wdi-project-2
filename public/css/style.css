@@ -1,20 +1,42 @@
-* {
+ /* {
   text-align: center;
-  font-family: sans-serif;
-  /* margin: 30px; */
+  font-family: Helvetica, sans-serif;
+  margin: 30px;
 }
 
+body {
+  align-items: center;
+}
 .container {
   display: flex;
   justify-content: center;
   align-items:center;
 }
 
+.posts {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.posts-title {
+  font-size: 30px;
+  text-align: center;
+}
+
+.posts img {
+  height: 400px;
+  width: 400px;
+  background-size: contain;
+  margin: 30px;
+}
+
 nav ul {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: pink;
+  border-bottom: 1px solid black;
   height: 10vh;
   margin-bottom: 5vh;
 }
@@ -24,24 +46,46 @@ nav ul {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  background-color: orange;
-  width: 100%;
-  height: 100%;
-  /* margin: 30px; */
+  width: 100vw;
+  height: 50vh;
+  border: 1px solid black;
+  border: 1px solid black;
 }
 
-.feed-grid img {
-  height: 400px;
-  width: 400px;
-  background-size: cover;
-  margin: 30px;
+.content {
+  width: 20vw;
+  height: 30vh;
 }
 
 .subtitle {
   font-size: 10px;
-  color: blue;
+  color: pink;
 }
 
 .comments {
   padding: 10px;
 }
+
+a {
+  color: black;
+}
+
+button {
+  width: 31vw;
+  height: 5vh;
+  margin: 20px;
+  border: 1px solid black;
+  box-shadow: 5px 5px black;
+  color: grey;
+  background-color: white;
+}
+
+button:hover {
+  color: black;
+}
+
+footer {
+  width: 100%;
+  height: 20vh;
+  margin-top: 10vh;
+} */

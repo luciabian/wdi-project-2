@@ -1,15 +1,38 @@
-<form action="/instagram/<%= _id %>?_method=PUT" method="post">
-  <div class="control">
-    <label for="name">Caption</label>
-    <input name="caption" value="<%= caption %>" id="name" placeholder="Edit your caption">
-  </div>
-  <div class="control">
-    <label for="name">Image (URL)</label>
-    <input name="image" value="<%= image %>" id="name" placeholder="http://...">
-  </div>
-  <div class="control">
-    <label for="location">Location</label>
-    <input name="location" value="<%= location %>" id="location" placeholder="Edit the location">
-  </div>
-  <button class="button">Update my post</button>
-</form>
+<section class="section">
+ <div class="columns">
+   <div class="column is-4 is-offset-4">
+     <h2 class="title is-2"> Edit your post</h2>
+     <form action="/instagram/<%= _id %>?_method=PUT" method="post">
+
+
+       <div class="field">
+         <label class="label">Image (URL)</label>
+         <div class="control">
+           <input class="input" name="image" value="<%= image %>">
+         </div>
+       </div>
+
+       <div class="field">
+         <label class="label">Caption</label>
+          <div class="control">
+            <textarea class="textarea" name="caption" value="<%= caption %>" placeholder="<%= caption %>" ></textarea>
+          </div>
+       </div>
+
+       <div class="field">
+         <label class="label">Location</label>
+         <div class="control">
+           <input class="input" name="location" value="<%= location %>">
+         </div>
+       </div>
+
+       <div class="field is-grouped">
+         <div class="control">
+           <button class="button is-center">Update</button>
+         </div>
+       </div>
+
+     </form>
+   </div>
+ </div>
+</section> %>

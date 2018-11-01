@@ -1,6 +1,60 @@
-<h1><%=  %></h1>
-<h2> My posts </h2>
-<% addedPosts.forEach(instagram => { %>
-  <p><strong><%= instagram.caption %></strong></p>
-  <img><%= instagram.image %></img>
-  <% }); %>
+  <div class="columns is-centered is-multiline">
+    <div class="columns column is-2">
+      <div class="column is-9">
+        <header>
+        <%# <figure class="image is-10x10">
+          <img class="is-rounded" src="https://i.pinimg.com/564x/75/ea/d1/75ead1062d956556e3491488ebe2b3bc.jpg" alt="Placeholder image">
+        </figure> %>
+      </div>
+    </div>
+      <div class="columns is-centered is-multiline column is-9">
+        <div class="column is-6">
+          <p class="title is-1"><%= locals.currentUser.username %></p>
+          <p class="subtitle">@lucia</p>
+      </div>
+    </div>
+    <div class="columns column is-9 is-centered">
+      <div class="column is-4">
+        <nav class="level">
+          <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Posts</p>
+            <p class="title is-4">3,456</p>
+          </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Following</p>
+              <p class="title is-4">123</p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Followers</p>
+              <p class="title is-4">456K</p>
+            </div>
+          </div>
+        </nav>
+      </header>
+      </div>
+    </div>
+  </div>
+<hr/>
+
+  <div class="columns is-12 is-centered ">
+    <div class="column is-9">
+        <div class="columns is-centered is-multiline">
+          <% addedPosts.forEach(instagram => { %>
+            <div class=" column is-4">
+              <div>
+                <a href="/instagram/<%= instagram.id %>">
+                  <figure class="image is-square">
+                    <img src='<%= instagram.image %>' ></img>
+                  </figure>
+                </a>
+              </div>
+            </div>
+          <% }); %>
+      </div>
+    </div>
+  </div>

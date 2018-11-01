@@ -9,6 +9,7 @@ User.collection.drop();
 
 const instagramData = [
   {
+    
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Bramble_Cocktail1.jpg/440px-Bramble_Cocktail1.jpg',
     caption: 'Look at this amazing cocktail I just had',
     location: 'London'

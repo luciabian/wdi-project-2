@@ -24,7 +24,7 @@ function loginRoute(req, res) {
         res.redirect('/login');
       } else {
         req.session.userId = result._id;
-        res.redirect('/instagram');
+        res.redirect('/');
       }
     });
 }
@@ -32,7 +32,7 @@ function loginRoute(req, res) {
 //LOGOUT
 function logoutRoute(req, res) {
   req.session.regenerate(function() {
-    res.redirect('/instagram');
+    res.redirect('/');
   });
 }
 

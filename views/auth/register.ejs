@@ -1,6 +1,57 @@
-<form class="" action="/register" method="post">
-  <input type="text" placeholder="username" name="username">
-  <input type="text" placeholder="email" name="email">
-  <input type="text" placeholder="password" name="password">
-  <button>Register</button>
-</form>
+<section class="section">
+  <div class="columns">
+    <div class="column is-4 is-offset-4">
+      <h2 class="title is-2">Sign Up</h2>
+      <form class="" action="/register" method="post">
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" name="username" type="text" placeholder="Your Name">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" name="email" type="email" placeholder="Your email">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-exclamation-triangle"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" name="password" type="password" placeholder="password" value="">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-exclamation-triangle"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-dark">Register</button>
+          </div>
+        </div>
+        <div class="is-center">
+          <hr/>
+          <p>Have an account?</p>
+          <p><a href= "/login">Log in</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

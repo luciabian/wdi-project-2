@@ -1,51 +1,108 @@
 <div class="columns">
-  <h1><%= addedBy %></h1>
-  <div class="picture column is-6">
-    <% if (location) { %>
-    <h4 class="subtitle">Location: <%= location %></h4>
-    <% } %>
-    <img src="<%= image %>" >
-    <h4 class="subtitle">Posted on <%= time %></h4>
-    <% if (locals.isLoggedIn) {%>
-      <div class="columns">
-        <div class= "column is-half">
-          <a class="button" href="/instagram/<%= id %>/edit">Edit</a>
+  <div class="card column is-one-third is-offset-one-third">
+    <div class="card-content">
+
+
+      <header class="card-header">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="media-left">
+            <p class="title is-4"><%= locals.currentUser.username %></p>
+            <p class="subtitle is-6">@lucia</p>
+          </div>
         </div>
-        <div class="column is-half">
-          <form action="/instagram/<%= id %>?_method=DELETE" method="post">
-            <button class="button">Delete</button>
-          </form>
+        <% if(locals.isLoggedIn) { %>
+        <div class="media-right dropdown is-active">
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a href="/instagram/<%= id %>/edit" class="dropdown-item">
+                Edit
+              </a>
+              <form action="/instagram/<%= id %>?_method=DELETE" method="post">
+                <button style="border: none" class="dropdown-item" >
+                  Delete
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
-      </div>
-      <% } %>
-  </div>
-  <div class="comments colum is-6">
-    <% if (caption) { %>
-    <h4 class="subtitle"><%= caption %></h4>
-    <% } %>
-    <ul>
-    <% if (locals.isLoggedIn) { %>
-      <% comments.forEach(comment => { %>
-        <div>
-          <span style="font-weight: bold;"><%= comment.user %></span>
+        <% } %>
+      </header>
+
+
+        <div class="card-image">
+          <figure class="image is-round">
+            <img src="<%= image %>" alt="Placeholder image">
+          </figure>
         </div>
-        <div>
-          <span><%= comment.content %></span>
-          <span>
-            <form method="POST" action="/instagram/<%= _id %>/comments/<%= comment._id %>?_method=DELETE">
-              <button>x</button>
-            </form>
-          </span>
+
+
+        <div class="card-content">
+          <div class="level is-mobile">
+            <div class="level-left">
+              <div class="level-item has-text-centered">
+                <a href="">
+                  <i class="material-icons far fa-heart"></i>
+                </a>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <a href="">
+                    <i class="material-icons far fa-comment"></i>
+                  </a>
+              </div>
+            </div>
+          </div>
         </div>
-      <% }) %>
-    </ul>
-        <div>
+          <p class="title is-4"><%= caption %></p>
+          <% if (location) { %>
+            <p class="subtitle"><strong>Location: </strong><a href="https://www.google.co.uk/maps"><%= location %></a></p>
+          <% } %>
+          <br/>
+          <p class="subtitle"><strong>Posted on </strong> <%= time %></p>
+
+
+
           <form method="POST" action="/instagram/<%= _id %>/comments">
-            <textarea name="content"></textarea>
+            <div class="field">
+              <div class="control">
+                <input class="input is-medium" placeholder="Add a comment..."></input>
+              </div>
+            </div>
             <input name="username" type="hidden" value="<%= locals.currentUser.username %>"/>
-            <button>Post comment</button>
+            <div class="field">
+              <p class="control">
+                <button class="button">Post</button>
+              </p>
+            </div>
           </form>
-        </div>
-    <% } %>
- </div>
+
+          <ul>
+            <% if (locals.isLoggedIn) { %>
+              <% comments.forEach(comment => { %>
+                <div class="media-content">
+                  <p class="title is-4"><%= comments.username %></p>
+                  <p class="subtitle is-6"><%= comments.content %></p>
+                  <form method="POST" action="/instagram/<%= _id %>/comments/<%= comment._id %>?_method=DELETE">
+                    <button class="button">x</button>
+                  </form>
+                </div>
+              <% }) %>
+            <% } %>
+          </ul>
+
+      </div>
+    </div>
+  </div>
 </div>

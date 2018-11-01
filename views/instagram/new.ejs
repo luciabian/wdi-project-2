@@ -1,20 +1,47 @@
-<form action="/instagram" method="post">
-  <div class="control">
-    <label for="name">Username</label>
-    <input name="addedBy" id="name" type="hidden" value="<%= locals.currentUser._id %>"/>
-  </div>
-  <div class="control">
-    <label for="name">Caption</label>
-    <input name="caption" id="name" placeholder="Write a caption">
-  </div>
-  <div class="control">
-    <label for="name">Image (URL)</label>
-    <input name="image" id="name" placeholder="http://...">
-  </div>
-  <div class="control">
-    <label for="location">Location</label>
-    <input name="location" id="location" placeholder="Location">
-  </div>
+ <section class="section">
+  <div class="columns">
+    <div class="column is-4 is-offset-4">
+      <h2 class="title is-2"> Create a new post</h2>
+      <form action="/instagram" method="post">
 
-  <button class="button">Share</button>
-</form>
+
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control">
+            <input class="input" name="addedBy" type="hidden" value="<%= locals.currentUser._id %>" placeholder="Your email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Image (URL)</label>
+          <div class="control">
+            <input class="input" name="image" placeholder="http://...">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Caption</label>
+            <div class="field">
+              <div class="control">
+                <textarea class="textarea is-medium" placeholder="Write a caption"></textarea>
+              </div>
+            </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Location</label>
+          <div class="control">
+            <input class="input" name="location" placeholder="Location">
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-center">Share</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section> %>

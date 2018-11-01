@@ -34,7 +34,7 @@ function showRoute(req, res) {
 function updateRoute(req, res) {
   Instagram.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
-      res.redirect('/instagram');
+      res.redirect('/');
     });
 }
 
@@ -49,7 +49,7 @@ function editRoute(req, res) {
 //DELETE FUNCTION
 function deleteRoute(req,res) {
   Instagram.findByIdAndDelete(req.params.id)
-    .then(() => res.redirect('/instagram'));
+    .then(() => res.redirect('/'));
 }
 
 module.exports = {

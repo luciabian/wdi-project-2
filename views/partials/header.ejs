@@ -1,16 +1,39 @@
-<nav>
-  <ul>
-    <%# <li><a href="/">Home</a></li> %>
-    <li><a href="/instagram">All the posts</a></li>
-    <%# <li><a href="/explore">Explore</a></li> %>
-    <input type="text" autocapitalize="none" placeholder="Search" value>
-    <% if (locals.isLoggedIn) { %>
-      <li><a href="/profile/<%= locals.currentUser._id %>">My profile</a></li>
-      <li><a href="/instagram/new">Create a new post</a></li>
-      <li><a href="/logout">Log out of <%= locals.currentUser.username %></a></li>
-    <% } else { %>
-      <li><a href="/login">Log in</a></li>
-      <li><a href="/register">Sign up for more</a></li>
-    <% } %>
-  </ul>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            Feed
+          </a>
+
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <% if (locals.isLoggedIn) { %>
+          <a class="navbar-item" href="/profile/<%= locals.currentUser._id %>">
+            My profile
+          </a>
+          <a class="navbar-item" href="/instagram/new">
+            Create a new post
+          </a>
+          <a class="navbar-item" href="/logout">
+      </div>
+            Log out of <%= locals.currentUser.username %>
+          </a>
+        <% } else { %>
+          <div class="navbar-item">
+            <div class="navbar-end">
+              <div class="buttons">
+                <a class="button is-light" href="/login">
+                  Log in
+                </a>
+                <a class="button is-light" href="/register">
+                  Sign up for more
+                </a>
+              </div>
+            </div>
+          </div>
+        <% } %>
+    </div>
+  </div>
 </nav>
+<hr/>
+
+<%# </div> %>

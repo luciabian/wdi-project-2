@@ -1,13 +1,50 @@
-<main>
-  <h1>Feed</h1>
-  <div class="feed-grid">
-    <% instagram.forEach(instagram => { %>
-      <div>
-      <a href="/instagram/<%= instagram.id %>">
-      <img src="<%= instagram.image %>" />
-      <h3><%= instagram.comment %></h3>
-      </a>
-      </div>
-      <% }) %>
+<% instagram.forEach(instagram => {%>
+  <div class="columns is-centered">
+    <div class="card column is-5 is-rows">
+      <div class="card-content">
+
+
+            <header class="card-header">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="profile-pic image is-48x48">
+                    <img src="https://source.unsplash.com/random/96x96" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">@lucia</p>
+                  <a class="subtitle><p"><%= instagram.location %></p></a>
+                </div>
+              </div>
+            </header>
+
+
+            <div class="card-image">
+              <a href="/instagram/<%= instagram.id %>" class="image is-4by4">
+                <img src="<%= instagram.image %>" alt="Posted by @SimpsonsUser">
+              </a>
+            </div>
+
+            <div class="card-content">
+              <div class="level is-mobile">
+                <div class="level-left">
+                  <div class="level-item has-text-centered">
+                    <a href="">
+                      <i class="material-icons far fa-heart"></i>
+                    </a>
+                  </div>
+                  <div class="level-item has-text-centered">
+                    <div>
+                      <a href="">
+                        <i class="material-icons far fa-comment"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+    </div>
   </div>
-</main>
+</div>
+<% }) %>
