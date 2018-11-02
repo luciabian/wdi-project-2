@@ -8,12 +8,12 @@
               <div class="media">
                 <div class="media-left">
                   <figure class="profile-pic image is-48x48">
-                    <img src="https://source.unsplash.com/random/96x96" alt="Placeholder image">
+                    <img class="is-rounded" src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
                   </figure>
                 </div>
                 <div class="media-content">
-                  <p class="title is-4">@lucia</p>
-                  <a class="subtitle><p"><%= instagram.location %></p></a>
+                  <p class="title is-4">@<%= instagram.addedBy %></p>
+                  <a href="https://www.google.com/maps" class="subtitle><p"><%= instagram.location %></p></a>
                 </div>
               </div>
             </header>
@@ -42,6 +42,7 @@
                   </div>
                 </div>
               </div>
+              <p class="title is-4"><%= instagram.caption %></p>
             </div>
 
     </div>

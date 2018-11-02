@@ -1,40 +1,16 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-            Feed
-          </a>
-
-    <div class="navbar-menu">
-      <div class="navbar-end">
-        <% if (locals.isLoggedIn) { %>
-          <a class="navbar-item" href="/profile/<%= locals.currentUser._id %>">
-            My profile
-          </a>
-          <a class="navbar-item" href="/instagram/new">
-            Create a new post
-          </a>
-          <a class="navbar-item" href="/logout">
-      </div>
-            Log out of <%= locals.currentUser.username %>
-          </a>
-        <% } else { %>
-          <div class="navbar-item">
-            <div class="navbar-end">
-              <div class="buttons">
-                <a class="button is-light" href="/login">
-                  Log in
-                </a>
-                <a class="button is-light" href="/register">
-                  Sign up for more
-                </a>
-              </div>
-            </div>
-          </div>
-        <% } %>
-    </div>
-
+<nav style="height: 10vh" class="card navbar columns is-centered" role="navigation" aria-label="main navigation">
+  <div class="navbar-menu columns is-centered column is-9">
+    <div class="navbar-start">
+    <a style="text-align" class="navbar-item" href="/">Feed</i></a>
+    <a style="text-align" class="navbar-item" href="/explore">Explore</i></a>
+  </div>
+    <% if (locals.isLoggedIn) { %>
+    <a style="text-align: center" class="navbar-item" href="/profile/<%= locals.currentUser._id %>">My profile</a>
+    <a style="text-align: center" class="navbar-item" href="/instagram/new">Create a new post</a>
+    <a style="text-align: center" class="navbar-item" href="/logout">Log out of <%= locals.currentUser.username %></a>
+    <% } else { %>
+    <a style="text-align: center" class="navbar-item" href="/login">Log in</a>
+    <a style="text-align: center" class="navbar-item" href="/register">Sign up for more</a>
+    <% } %>
   </div>
 </nav>
-<hr/>
-
-<%# </div> %>

@@ -9,7 +9,7 @@ const instagramSchema = mongoose.Schema({
   comments: [
     {
       user: { type: mongoose.Schema.ObjectId, ref: 'User' },
-      content: {type: String}
+      content: { type: String }
     }
   ]
 });

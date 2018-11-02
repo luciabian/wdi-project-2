@@ -1,1 +1,13 @@
-
+<div class="columns is-centered">
+  <div class="column is-9 columns is-multiline">
+    <% addedPosts.forEach(instagram => { %>
+      <div class="column is-4">
+        <div>
+          <a href="/instagram/<%= instagram.id %>">
+            <figure class="image is-square">
+              <img style="background-size: contain" src='<%= instagram.image %>' ></img>
+            </figure>
+          </a>
+        </div>
+      </div>
+    <% }); %>

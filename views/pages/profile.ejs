@@ -1,55 +1,85 @@
   <div class="columns is-centered is-multiline">
-    <div class="columns column is-2">
-      <div class="column is-9">
-        <header>
-        <%# <figure class="image is-10x10">
-          <img class="is-rounded" src="https://i.pinimg.com/564x/75/ea/d1/75ead1062d956556e3491488ebe2b3bc.jpg" alt="Placeholder image">
-        </figure> %>
-      </div>
+    <div class="column is-2">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="https://i.pinimg.com/564x/cc/1e/0a/cc1e0a9e5a1a3827ffe73cd8e0ff5d99.jpg" alt="Placeholder image">
+           </figure>
     </div>
-      <div class="columns is-centered is-multiline column is-9">
-        <div class="column is-6">
+    <div class="column is-4">
+        <div class="column is-9">
           <p class="title is-1"><%= locals.currentUser.username %></p>
-          <p class="subtitle">@lucia</p>
+          <p class="subtitle">@<%= locals.currentUser.username %></p>
       </div>
-    </div>
-    <div class="columns column is-9 is-centered">
-      <div class="column is-4">
+    <div class="column is-9">
         <nav class="level">
-          <div class="level-item has-text-centered">
+          <div class="level-item">
           <div>
             <p class="heading">Posts</p>
-            <p class="title is-4">3,456</p>
+            <p class="title is-4">6</p>
           </div>
           </div>
           <div class="level-item has-text-centered">
             <div>
               <p class="heading">Following</p>
-              <p class="title is-4">123</p>
+              <p class="title is-4">286</p>
             </div>
           </div>
           <div class="level-item has-text-centered">
             <div>
               <p class="heading">Followers</p>
-              <p class="title is-4">456K</p>
+              <p class="title is-4">345</p>
             </div>
           </div>
         </nav>
-      </header>
-      </div>
     </div>
   </div>
+</div>
 <hr/>
 
-  <div class="columns is-12 is-centered ">
-    <div class="column is-9">
-        <div class="columns is-centered is-multiline">
+  <div class="columns is-centered">
+    <div class="column is-9 columns is-multiline">
+
+        <div class="column is-4">
+          <figure class="image is-square">
+            <img src="https://i.pinimg.com/564x/e0/1e/91/e01e913e3fff55438f5c72a79f0839e3.jpg" alt="">
+          </figure>
+        </div>
+
+        <div class="column is-4">
+          <figure class="image is-square">
+            <img src="https://i.pinimg.com/564x/9d/ae/db/9daedbc00f04bf50905b5696d7032ada.jpg" alt="">
+          </figure>
+        </div>
+
+        <div class="column is-4">
+          <figure class="image is-square">
+            <img src="https://i.pinimg.com/564x/47/cf/0a/47cf0a2edac250658b6d9c8bb549728a.jpg" alt="">
+          </figure>
+        </div>
+
+        <div class="column is-4">
+          <figure class="image is-square">
+            <img src="https://i.pinimg.com/564x/11/17/ec/1117ecb5694b51f8fb61b6e0f88a1e20.jpg" alt="">
+          </figure>
+        </div>
+
+        <div class="column is-4">
+          <figure class="image is-square">
+            <img src="https://i.pinimg.com/564x/c4/66/43/c46643c0b22e8e06e7c159f94663aaef.jpg" alt="">
+          </figure>
+        </div>
+
+        <div class="column is-4">
+          <figure class="image is-square">
+            <img src="https://i.pinimg.com/564x/2d/02/a4/2d02a4bc90fa231e0ef3736150c5e221.jpg" alt="">
+          </figure>
+        </div>
+
           <% addedPosts.forEach(instagram => { %>
-            <div class=" column is-4">
+            <div class="column is-4">
               <div>
                 <a href="/instagram/<%= instagram.id %>">
                   <figure class="image is-square">
-                    <img src='<%= instagram.image %>' ></img>
+                    <img style="background-size: contain" src='<%= instagram.image %>' ></img>
                   </figure>
                 </a>
               </div>
